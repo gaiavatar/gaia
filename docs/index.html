@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAIA</title>
+    <link rel="shortcut icon" type="image/jpg" href="" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <script src="https://kit.fontawesome.com/49f46e7382.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container is-max-widescreen">
+            <h1 class="title is-2 has-text-centered">
+                GAIA: Data-driven Zero-shot Talking Avatar Generation
+            </h1>
+            <p class="subtitle is-4 has-text-centered">
+                 <br>
+            </p>
+        </div>
+    <section>
+        <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <hr style="margin-top:0px">
+                <p><center><strong>Speech-driven Talking Avatar Generation</strong></center></p>
+                <p></p>
+                <table style="table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td width="33%"> <video width="95%" controls> <source src="video/1_speech_driven_1.mp4" type="video/mp4"> </video> </td>
+                        <td width="33%"> <video width="95%" controls> <source src="video/1_speech_driven_2.mp4" type="video/mp4"> </video> </td>
+                        <td width="33%"> <video width="95%" controls> <source src="video/1_speech_driven_3.mp4" type="video/mp4"> </video> </td>
+                    </tr>
+                    <tr>
+                        <td width="33%"> <span>   </span> </td>
+                        <td width="33%"> <span>   </span> </td>
+                        <td width="33%"> <span>   </span> </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br>
+                <hr style="margin-top:0px">
+                <p><center><strong>Video-driven Talking Avatar Generation</strong></center></p>
+                <p></p>
+                <table style="table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td width="50%"> <video width="95%" controls> <source src="video/2_video_driven_1.mp4" type="video/mp4"> </video> </td>
+                        <td width="50%"> <video width="95%" controls> <source src="video/2_video_driven_2.mp4" type="video/mp4"> </video> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%"> <span>   </span> </td>
+                        <td width="50%"> <span>   </span> </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br>
+                <hr style="margin-top:0px">
+                <table style="table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td width="65%"> <span><center><strong> <a href="#posecontrol">Pose-controllable Talking Avatar Generation</a> </strong></center></span> </td>
+                        <td width="35%"> <span><center><strong> <a href="#fullcontrol">Fully Controllable Talking Avatar Generation</a> </strong></center></span> </td>
+                    </tr>
+                    <tr>
+                        <td width="66.4%"> <video width="95%" controls> <source src="video/3_pose_control.mp4" type="video/mp4"> </video> </td>
+                        <td width="32%"> <video width="95%" controls> <source src="video/4_full_control.mp4" type="video/mp4"> </video> </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br>
+                <hr style="margin-top:0px">
+                <table style="table-layout: fixed;">
+                    <tbody>
+                        <tr>
+                            <td width="33%"> <span><center><strong> Textual Instruction: Sad </strong></center></span> </td>
+                            <td width="33%"> <span><center><strong> Textual Instruction: Open your mouth </strong></center></span> </td>
+                            <td width="33%"> <span><center><strong> Textual Instruction: Surprise </strong></center></span> </td>
+                        </tr>
+                        <tr>
+                            <td width="33%"> <video width="95%" controls> <source src="video/5_text_driven_sad.mp4" type="video/mp4"> </video> </td>
+                            <td width="33%"> <video width="95%" controls> <source src="video/5_text_driven_openmouth.mp4" type="video/mp4"> </video> </td>
+                            <td width="33%"> <video width="95%" controls> <source src="video/5_text_driven_surprise.mp4" type="video/mp4"> </video> </td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+        </div>
+    <br>
+    </section>
+
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Abstract
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>
+                    Zero-shot talking avatar generation aims at synthesizing natural talking videos from speech and a single portrait image. Previous methods have relied on domain-specific heuristics such as warping-based motion representation and 3D Morphable Models, which limit the naturalness and diversity of the generated avatars. 
+                    In this work, we introduce <strong>GAIA (Generative AI for Avatar)</strong>, which eliminates the domain priors in talking avatar generation.
+                </p>
+                
+                <p>
+                    In light of the observation that the speech only drives the motion of the avatar while the appearance of the avatar and the background typically remain the same throughout the entire video, 
+                    we divide our approach into two stages: 1) disentangling each frame into motion and appearance representations; 2) generating motion sequences conditioned on the speech and reference portrait image.
+                </p>
+
+                <p>
+                    We collect a large-scale high-quality talking avatar dataset and train the model on it with different scales (up to 2B parameters). Experimental results verify the superiority, scalability, and flexibility of GAIA as
+                    1) the resulting model beats previous baseline models in terms of naturalness, diversity, lip-sync quality, and visual quality;
+                    2) the framework is scalable since larger models yield better results;
+                    3) it is general and enables different applications like controllable talking avatar generation and text-instructed avatar generation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Method
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <img class="mb-5" src="img/framework.png">
+                <p>
+                    GAIA consists of a <strong>Variational AutoEncoder</strong> (VAE) (the orange modules) and a <strong>diffusion model</strong> (the blue and green modules).
+                    The VAE is firstly trained to encode each video frame into a disentangled representation (i.e., motion and appearance representation) and reconstruct the original frame from the disentangled representation.
+                    Then the diffusion model is optimized to generate motion sequences conditioned on the speech sequences and a random frame within the video clip.
+                    During inference, the diffusion model takes an input speech sequence and the reference portrait image as the condition and yields the motion sequence, which is decoded to the video by leveraging the decoder of the VAE.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Comparison: Speech-Driven Talking Avatar Generation<a name="speechdriven"></a>
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <video controls="" width="100%">
+                    <source src="video/1_speech-driven.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Comparison: Video-Driven Talking Avatar Generation<a name="videodriven"></a>
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <video controls="" width="100%">
+                    <source src="video/2_video-driven.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Visualization: Pose-Controllable Talking Avatar Generation<a name="posecontrol"></a>
+            </h1>
+            <video controls="" width="100%">
+                <source src="video/3_pose-control.mp4" type="video/mp4">
+            </video>
+            <p>
+                In addition to predicting the head pose from the speech, we also enable the model with pose-controllable generation. We implement it by replacing the estimated head pose with either a handcrafted pose or the one extracted from another video. The results show that we can control the head poses while the lip motion is synchronized with the speech content.
+            </p>
+        </div>
+    </section>
+
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Visualization: Fully-Controllable Talking Avatar Generation<a name="fullcontrol"></a>
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <video controls="" width="100%">
+                    <source src="video/4_full-control.mp4" type="video/mp4">
+                </video>
+                <p>
+                    Due to the controllability of the inverse diffusion process, we can control the arbitrary facial attributes by editing the landmarks during generation. Specifically, we train a diffusion model to synthesize the coordinates of the facial landmarks. The fully-controllable talking avatar generation is enabled by generating the mouth-related landmarks from the speech, and the rest is fixed to the reference motion.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Visualization: Text-Instructed Avatar Generation<a name="textdriven"></a>
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <!-- <video class="mb-3 is-16by9" width="100%" autoplay muted loop playsinline> -->
+                <video controls="" width="100%">
+                    <source src="video/5_text-driven.mp4" type="video/mp4">
+                </video>
+                <p>
+                    To show the generality of our framework, we consider textual instructions as the condition of the avatar generation. Specifically, when provided with a single reference portrait image, the generation should follow textual instructions such as “please smile” or “turn your head left” to generate a video clip with the avatar performing the desired action.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Responsible AI & Privacy Considerations
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>
+                GAIA is intended for advancing AI/ML research on talking avatar generation. We encourage users to use the model responsibly. We discourage users from using the codes to generate intentionally deceptive or untrue content or for inauthentic activities. To prevent misuse, adding watermarks is a common way and has been widely studied in both research and industry works. On the other hand, as an AIGC model, the generation results of our model can be utilized to construct artificial datasets and train discriminative models.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+    });
+</script>
+
+</html>
